@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "python -m SimpleHTTPServer 8000"
+    "start": "python -m SimpleHTTPServer 8000",
+    "clean": "rm -rf ./dist && rm -rf ./transpiled"
   },
   "engines": {
     "node": ">= 0.10.0"
