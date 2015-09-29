@@ -1,0 +1,19 @@
+{
+  "name": "modern-web-arsenal",
+  "version": "0.1.0",
+  "description": "Demo code for talk on workflow tooling",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seanepping/modern-web-tooling.git"
+  },
+  "author": "Sean Epping",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seanepping/modern-web-tooling/issues"
+  },
+  "homepage": "https://github.com/seanepping/modern-web-tooling"
+}
