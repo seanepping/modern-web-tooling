@@ -10,7 +10,10 @@
     "type": "git",
     "url": "https://github.com/seanepping/modern-web-tooling.git"
   },
-  "author": "Sean Epping",
+  "author": {
+    "name": "Sean Epping",
+    "email": "sean.epping@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/seanepping/modern-web-tooling/issues"
