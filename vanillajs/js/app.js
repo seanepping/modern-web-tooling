@@ -1,3 +1,4 @@
+import './helpers.js';
 import Store from './store.js';
 import Model from './model.js';
 import Template from './template.js';
@@ -25,5 +26,5 @@ var todo = new Todo('todos-vanillajs');
 function setView() {
     todo.controller.setView(document.location.hash);
 }
-$on(window, 'load', setView);
+setView();
 $on(window, 'hashchange', setView);

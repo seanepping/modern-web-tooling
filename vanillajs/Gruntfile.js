@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     babel: {
         options: {
             sourceMap: true,
-            modules: 'umd'
+            modules: 'amd'
         },
         dist: {
             files: [{
@@ -36,6 +36,16 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "transpiled",
+          out: "dist/<%= pkg.name %>.js",
+          name: 'app',
+          optimize:'none'
+        }
+      }
+    },
     uglify: {
       options: {
         banner: '<%= banner %>'
@@ -55,8 +65,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-babel');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Default task.
-  grunt.registerTask('default', ['eslint', 'babel', 'concat', 'uglify']);
+  grunt.registerTask('default', ['eslint', 'babel', 'requirejs']);
 
 };
