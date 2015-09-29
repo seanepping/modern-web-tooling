@@ -1,9 +1,9 @@
-import './helpers.js';
-import Store from './store.js';
-import Model from './model.js';
-import Template from './template.js';
-import View from './view.js';
-import Controller from './controller.js';
+import './helpers';
+import Store from './store';
+import Model from './model';
+import Template from './template';
+import View from './view';
+import Controller from './controller';
 
 /*global $on */
 'use strict';
