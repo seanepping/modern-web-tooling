@@ -11,13 +11,28 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
+    babel: {
+        options: {
+            sourceMap: true,
+            modules: 'umd'
+        },
+        dist: {
+            files: [{
+              expand: true,
+              cwd: 'js',
+              src: ['**/*.js'],
+              dest: 'transpiled',
+              ext: '.js'
+            }]
+        }
+    },
     concat: {
       options: {
         banner: '<%= banner %>',
         stripBanners: true
       },
       dist: {
-        src: ['js/!(app).js', 'js/app.js'],
+        src: ['transpiled/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -39,8 +54,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks('grunt-babel');
 
   // Default task.
-  grunt.registerTask('default', ['eslint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['eslint', 'babel', 'concat', 'uglify']);
 
 };
